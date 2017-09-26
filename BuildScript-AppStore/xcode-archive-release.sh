@@ -18,8 +18,7 @@ exportOptionsPlist="BuildScript-AppStore/release_exportOptions.plist"
 buildPath=$(dirname $(PWD))
 # buildPath=$(dirname ${buildPath})
 ipaPath="${buildPath}/appStorebuild/${archiveName}/${scheme}.ipa"
-appleid="xixi917@gmail.com"
-applepassword="raymOnd917"
+
 
 LOGIN_PASSWORD="123456"
 LOGIN_KEYCHAIN=~/Library/Keychains/login.keychain

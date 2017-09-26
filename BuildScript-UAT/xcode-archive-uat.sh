@@ -17,8 +17,7 @@ exportOptionsPlist="BuildScript-UAT/uat_exportOptions.plist"
 buildPath=$(dirname $(PWD))
 # buildPath=$(dirname ${buildPath})
 ipaPath="${buildPath}/biaozhunyufaBuild/${archiveName}/${scheme}.ipa"
-appleid="xixi917@gmail.com"
-applepassword="raymOnd917"
+
 
 function failed() {
     echo "Failed: $@" >&2
@@ -53,8 +52,7 @@ xcodebuild -exportArchive -archivePath $PWD/build/${archiveName}.xcarchive -expo
 osascript -e 'display notification "标准预发" with title "提交到蒲公英"'
 echo "提交蒲公英"
 curl -F "file=@${ipaPath}" \
--F "uKey=42288d021768ede10646af9889ab8a2b" \
--F "_api_key=cc16de8a696510ce18ad4b023cfa2a74" \
+
 -F "updateDescription=预发环境" \
 https://www.pgyer.com/apiv1/app/upload || failed "提交到蒲公英失败"
 echo "上传到蒲公英成功"
